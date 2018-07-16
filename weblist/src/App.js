@@ -1,34 +1,28 @@
-import React, { Component } from 'react';
-import ObjectItem from "./ObjectItem";
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+import ObjectList from "./components/ObjectList";
+
+const objects = [
+  { id: 1, name: "Leanne Graham" },
+  { id: 2, name: "Ervin Howell" },
+  { id: 3, name: "Clementine Bauch" },
+  { id: 4, name: "Patricia Lebsack" }
+];
 
 class App extends Component {
   render() {
     return (
-      <div>
-      <Header/>
-      <ObjectList/>
-      <ObjectItem name="Erik"/>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">React Contact Manager</h1>
+        </header>
+
+        <ObjectList objectItems={objects} />
       </div>
     );
-  }
-}
-
-class Header extends Component {
-  render() {
-    return (
-    <header className="App-header">
-      <h1 className="App-title">Web List</h1>
-    </header> );
-  }
-}
-
-class ObjectList extends Component {
-  render() {
-    const numbers = [1, 2, 3, 4, 5];
-    const listItems = numbers.map((number) => <li key={number}>{number}</li>);
-
-    return (<ul>Items {listItems}</ul>);
   }
 }
 

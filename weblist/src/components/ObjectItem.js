@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./ObjectItem.css";
 
 function ObjectItem(props) {
   return (
@@ -12,4 +13,5 @@ function ObjectItem(props) {
 ObjectItem.propTypes = {
   name: PropTypes.string.isRequired
 };
+
 export default ObjectItem;

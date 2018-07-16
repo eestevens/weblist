@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 
 function ObjectItem(props) {
@@ -11,3 +12,4 @@ function ObjectItem(props) {
 ObjectItem.propTypes = {
   name: PropTypes.string.isRequired
 };
+export default ObjectItem;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ObjectItem from "./ObjectItem";
 import './App.css';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
       <div>
       <Header/>
       <ObjectList/>
+      <ObjectItem name="Erik"/>
       </div>
     );
   }

@@ -5,10 +5,17 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      
-      </div>
+      <Header/>
     );
+  }
+}
+
+class Header extends Component {
+  render() {
+    return (
+    <header className="App-header">
+      <h1 className="App-title">Web List</h1>
+    </header> );
   }
 }
 

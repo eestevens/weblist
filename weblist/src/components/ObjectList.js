@@ -6,7 +6,8 @@ import ObjectItem from "./ObjectItem";
 
 function ObjectList(props) {
   return (
-    <div>{props.objectItems.map(c => <ObjectItem key={c.id} name={c.name} />)}</div>
+    <div>{props.objectItems.map(c => <ObjectItem key={c.id}
+      name={c.name} email={c.email} username={c.username} />)}</div>
   );
 }
 

@@ -5,6 +5,7 @@ import "./App.css";
 import axios from "axios";
 
 import ObjectList from "./components/ObjectList";
+import FilteredList from "./components/FilteredList";
 
 class App extends Component {
   // default state object
@@ -54,7 +55,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">React Contact Manager</h1>
         </header>
-
+        <FilteredList/>
         <ObjectList objectItems={this.state.objectItems} />
       </div>
     );

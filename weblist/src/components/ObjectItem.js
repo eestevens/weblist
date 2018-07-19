@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import "./ObjectItem.css";
 
 function ObjectItem(props){
-  var output= displayProperties(props);
+  var propertyOutput= displayProperties(props);
   return (
     <div className="object-item">
       <span className="span-heading">{props.name}</span><br/>
-      <span>{output}</span><br/>
+      <span>{propertyOutput}</span><br/>
       <span>{props.creatureText}</span><br/>
       <span>{props.flavor}</span><br/>
       <img src={props.image} alt={props.name} />

@@ -16,7 +16,7 @@ function ObjectItem(props){
 }
 
 function displayProperties(props) {
-  var output = props.username + " | " + props.email + " | ";
+  var output = props.type + " | " + props.rarity + " | ";
   if(props.power && props.toughness) {
     output = output + props.power + "/" + props.toughness + " | ";
   }

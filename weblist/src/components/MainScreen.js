@@ -41,8 +41,8 @@ class MainScreen extends Component {
           return {
             id: c.id,
             name: c.name,
-            username: c.type,
-            email : c.rarity,
+            type: c.type,
+            rarity : c.rarity,
             creatureText : c.originalText,
             color : c.colors,
             image : c.imageUrl,

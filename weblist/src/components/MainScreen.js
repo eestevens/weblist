@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import logo from "./mtg-logo.jpg";
 import "./MainScreen.css";
 
 import axios from "axios";
@@ -42,7 +42,7 @@ class MainScreen extends Component {
 
   getData() {
     axios
-      .get("https://api.magicthegathering.io/v1/cards?set=ODY")
+      .get("https://api.magicthegathering.io/v1/cards?set=ARB")
       .then(response => {
         // create an array of contacts only with relevant data
         const newObjectItems = response.data.cards.map(c => {
@@ -82,7 +82,7 @@ class MainScreen extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Contact Manager</h1>
+          <h1 className="App-title">Magic the Gathering</h1>
         </header>
         <input type="text" placeholder="Search" onChange={this.filterList.bind(this)}/>
         <ObjectList objectItems={this.state.objectItems} />

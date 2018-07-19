@@ -15,6 +15,12 @@
   text-align: center;
 }
 
+.Search-bar {
+  color: black;
+  background-color: #D6DCF0;
+  text-color: black;
+}
+
 .App-title {
   font-size: 1.5em;
 }

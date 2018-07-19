@@ -84,7 +84,8 @@ class MainScreen extends Component {
     console.log("Filter");
     console.log(this.state.objectItems.length);
     updatedList = updatedList.filter(function (item) {
-      if(item.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1) {
+      var stringOutput = JSON.stringify(item);
+      if(stringOutput.toLowerCase().search(event.target.value.toLowerCase()) !== -1) {
         return true;
       }
       if(item.username.toLowerCase().search(event.target.value.toLowerCase()) !== -1) {

@@ -22,7 +22,6 @@ class MainScreen extends Component {
 
     unSortedItems.sort(function(a, b){
       var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
-      console.log(nameA + " " + nameB);
       if (nameA < nameB) //sort string ascending
       return -1;
       if (nameA > nameB)
@@ -43,7 +42,7 @@ class MainScreen extends Component {
 
   getData() {
     axios
-      .get("https://api.magicthegathering.io/v1/cards?set=KTK")
+      .get("https://api.magicthegathering.io/v1/cards?set=ODY")
       .then(response => {
         // create an array of contacts only with relevant data
         const newObjectItems = response.data.cards.map(c => {
@@ -54,7 +53,9 @@ class MainScreen extends Component {
             email : c.rarity,
             creatureText : c.text,
             color : c.colors,
-            image : c.imageUrl
+            image : c.imageUrl,
+            toughness : c.toughness,
+            power : c.power
           };
         });
         const newState = Object.assign({}, this.state, {

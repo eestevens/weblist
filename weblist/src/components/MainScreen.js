@@ -5,7 +5,6 @@ import "./MainScreen.css";
 import axios from "axios";
 
 import ObjectList from "./ObjectList";
-import FilteredList from "./FilteredList";
 
 class MainScreen extends Component {
   // default state object
@@ -13,19 +12,27 @@ class MainScreen extends Component {
     objectItems: [],
     initialItems : []
   };
+  componentWillMount() {
+    console.log("Component Will Mount");
+    this.getData();
+    console.log("Component Will Mounted");
+  }
 
   componentDidMount() {
-    console.log("did mount");
-    this.getData();
-    this.sortData();
+    console.log("Did mount");
+
+    console.log("Component Did Mounted");
   }
 
   sortData() {
-    console.log("sort data");
-    const unSortedItems = this.state.initialItems;
+    console.log("Sort Data " + this.state.objectItems.length + " . " + this.state.initialItems.length);
+    const unSortedItems = this.state.objectItems;
+
     const allItems = this.state.initialItems;
+
     unSortedItems.sort(function(a, b){
       var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+      console.log(nameA + " " + nameB);
       if (nameA < nameB) //sort string ascending
       return -1;
       if (nameA > nameB)
@@ -45,17 +52,20 @@ class MainScreen extends Component {
   }
 
   getData() {
-    console.log("get data");
+    console.log("Get Data");
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("https://api.magicthegathering.io/v1/cards")
       .then(response => {
         // create an array of contacts only with relevant data
-        const newObjectItems = response.data.map(c => {
+        const newObjectItems = response.data.cards.map(c => {
           return {
             id: c.id,
             name: c.name,
-            username: c.username,
-            email : c.email
+            username: c.type,
+            email : c.rarity,
+            creatureText : c.text,
+            color : c.colorIdentity,
+            image : c.imageUrl
           };
         });
         const newState = Object.assign({}, this.state, {
@@ -63,6 +73,9 @@ class MainScreen extends Component {
           initialItems : newObjectItems
         });
         this.setState(newState);
+        this.sortData();
+        console.log("Got Data " + this.state.objectItems.length + " . " + this.state.initialItems.length);
+
       })
       .catch(error => console.log(error));
   }
@@ -71,7 +84,13 @@ class MainScreen extends Component {
     console.log("Filter");
     console.log(this.state.objectItems.length);
     updatedList = updatedList.filter(function (item) {
-      return item.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
+      if(item.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1) {
+        return true;
+      }
+      if(item.username.toLowerCase().search(event.target.value.toLowerCase()) !== -1) {
+        return true;
+      }
+      return item.email.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
     });
     console.log(this.state.initialItems);
     console.log(updatedList.length);
@@ -79,9 +98,7 @@ class MainScreen extends Component {
   }
 
   render() {
-    console.log("render");
-    console.log(this.state.initialItems.length);
-    console.log(this.state.objectItems.length);
+    console.log("render " + this.state.initialItems.length + " " + this.state.objectItems.length);
     return (
       <div className="App">
         <header className="App-header">

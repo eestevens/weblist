@@ -1,13 +1,10 @@
 import React, { Component } from "react";
+import axios from "axios";
 import logo from "./mtg-logo.jpg";
 import "./MainScreen.css";
-
-import axios from "axios";
-
 import ObjectList from "./ObjectList";
 
 class MainScreen extends Component {
-  // default state object
   state = {
     objectItems: [],
     initialItems : []
@@ -22,22 +19,17 @@ class MainScreen extends Component {
 
     unSortedItems.sort(function(a, b){
       var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
-      if (nameA < nameB) //sort string ascending
+      if (nameA < nameB)
       return -1;
       if (nameA > nameB)
       return 1;
-      return 0; //default return value (no sorting)
+      return 0;
     });
-    // create a new "state" object without mutating
-    // the original state object.
     const newState = Object.assign({}, this.state, {
       objectItems: unSortedItems,
       initialItems: allItems
     });
-
-    // store the new state object in the component's state
     this.setState(newState);
-
   }
 
   getData() {

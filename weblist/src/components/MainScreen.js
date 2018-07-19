@@ -63,8 +63,15 @@ class MainScreen extends Component {
   filterList(event) {
     var updatedList = this.state.initialItems;
     updatedList = updatedList.filter(function (item) {
-      var stringOutput = JSON.stringify(item);
-      return stringOutput.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
+      var searchTerms = event.target.value.toLowerCase().split("|");
+      var stringOutput = JSON.stringify(item).toLowerCase();
+      for(var i = 0; i < searchTerms.length ; i ++) {
+        if(searchTerms[i] && stringOutput.search(searchTerms[i]) !== -1) {
+          return true;
+        }
+
+      }
+      return stringOutput.search(event.target.value.toLowerCase()) !== -1;
     });
     this.setState({ objectItems: updatedList, initialItems : this.state.initialItems });
   }
@@ -76,7 +83,9 @@ class MainScreen extends Component {
           <img src={logo} className="App-logo" alt="Magic the Gathering Logo" />
           <h1 className="App-title">Magic the Gathering</h1>
         </header>
+        <div className="Search-bar">
         <input type="text" placeholder="Search" onChange={this.filterList.bind(this)}/>
+        <span> Combine search terms with | or use quotes for exact match</span> </div>
         <ObjectList objectItems={this.state.objectItems} />
       </div>
     );

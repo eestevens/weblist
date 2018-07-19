@@ -10,7 +10,7 @@ function ObjectItem(props){
       <span>{output}</span><br/>
       <span>{props.creatureText}</span><br/>
       <span>{props.flavor}</span><br/>
-      <img src={props.image} />
+      <img src={props.image} alt={props.name} />
     </div>
   );
 }

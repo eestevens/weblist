@@ -81,7 +81,7 @@ class MainScreen extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="Magic the Gathering Logo" />
           <h1 className="App-title">Magic the Gathering</h1>
         </header>
         <input type="text" placeholder="Search" onChange={this.filterList.bind(this)}/>

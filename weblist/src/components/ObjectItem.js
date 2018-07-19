@@ -9,6 +9,7 @@ function ObjectItem(props){
       <span className="span-heading">{props.name}</span><br/>
       <span>{output}</span><br/>
       <span>{props.creatureText}</span><br/>
+      <span>{props.flavor}</span><br/>
       <img src={props.image} />
     </div>
   );

@@ -51,11 +51,12 @@ class MainScreen extends Component {
             name: c.name,
             username: c.type,
             email : c.rarity,
-            creatureText : c.text,
+            creatureText : c.originalText,
             color : c.colors,
             image : c.imageUrl,
             toughness : c.toughness,
-            power : c.power
+            power : c.power,
+            flavor : c.flavor
           };
         });
         const newState = Object.assign({}, this.state, {

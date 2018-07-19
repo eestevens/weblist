@@ -2,8 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ObjectItem.css";
 
-function ObjectItem(props) {
-  var color = "Uncolored" + props.color;
+function ObjectItem(props){
+
+  var color = getColor(props);
+  var style = "font-weight: bold;";
+  return (
+    <div className="object-item">
+      <span className="span-heading">{props.name}</span><br/>
+      <span>{props.username} | {props.email} | {color}</span><br/>
+      <span>{props.creatureText}</span><br/>
+      <img src={props.image} />
+    </div>
+  );
+}
+
+function getColor(props) {
+  return props.color;
+  var color = "Uncolored";
   if(props.color == "U") {
     color = "Blue";
   } else if (props.color == "W") {
@@ -12,19 +27,10 @@ function ObjectItem(props) {
     color = "Black";
   } else if(props.color == "G") {
     color = "Green";
-  } else if (props.color == "R,B") {
+  } else if (props.color == "R,B" || props.color == "R") {
     color = "Red";
   }
-  return (
-    <div className="object-item">
-      <span>{props.name}</span><br/>
-      <span>{props.username}</span><br/>
-      <span>{props.email}</span><br/>
-      <span>{props.creatureText}</span><br/>
-      <span>{color}</span><br/>
-      <img src={props.image} />
-    </div>
-  );
+  return color;
 }
 
 ObjectItem.propTypes = {

@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/magicGathering/static/css/main.1064839b.chunk.css",
+    "main.js": "/magicGathering/static/js/main.22d39cb5.chunk.js",
+    "main.js.map": "/magicGathering/static/js/main.22d39cb5.chunk.js.map",
+    "runtime-main.js": "/magicGathering/static/js/runtime-main.ae2e2553.js",
+    "runtime-main.js.map": "/magicGathering/static/js/runtime-main.ae2e2553.js.map",
+    "static/js/2.3b14c150.chunk.js": "/magicGathering/static/js/2.3b14c150.chunk.js",
+    "static/js/2.3b14c150.chunk.js.map": "/magicGathering/static/js/2.3b14c150.chunk.js.map",
+    "index.html": "/magicGathering/index.html",
+    "precache-manifest.36727b01d9b8e5f311ce08ab0bbe3d01.js": "/magicGathering/precache-manifest.36727b01d9b8e5f311ce08ab0bbe3d01.js",
+    "service-worker.js": "/magicGathering/service-worker.js",
+    "static/css/main.1064839b.chunk.css.map": "/magicGathering/static/css/main.1064839b.chunk.css.map",
+    "static/js/2.3b14c150.chunk.js.LICENSE.txt": "/magicGathering/static/js/2.3b14c150.chunk.js.LICENSE.txt",
+    "static/media/mtg-logo.jpg": "/magicGathering/static/media/mtg-logo.ebc77ba3.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ae2e2553.js",
+    "static/js/2.3b14c150.chunk.js",
+    "static/css/main.1064839b.chunk.css",
+    "static/js/main.22d39cb5.chunk.js"
+  ]
+}

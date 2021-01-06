@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://eestevens.github.io/magicGathering",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "prop-type": "0.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.13.1",
